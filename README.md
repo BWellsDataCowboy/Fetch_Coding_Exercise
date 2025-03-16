@@ -1,4 +1,5 @@
 # A Few Notes Before Digging In....
+- Normally I would make issues, branches from those issues and PR's from those branches, but for the sake of this just being a test I did not.
 - All of these Python scripts are runnable using Python 3.10.8. Please create a virtual environment and run `pip install -r requirements.txt` before executing.
 - All Python scripts have been formatted with Black, and all SQL code has been formatted with sqlfmt. I am familiar with having CI/CD processes handle this, but did it manually for this project.
 - I am using the Snowflake SQL dialect for all SQL queries. You can log in and run the SQL in the Snowflake trial org I have created, with the following details (if the trial is still active):
