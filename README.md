@@ -34,9 +34,9 @@ This process allowed me to understand the underlying data structure and informed
 I attempted to answer all the business questions using SQL queries against our structured relational data model. The questions were:
 
 - **What are the top 5 brands by receipts scanned for the most recent month?**
-  - unanswered
+  - See the full query in `sql/mart/mart_brand_receipt_ranking.sql`.
 - **How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?**
-  - unanswered
+  - See the full query in `sql/mart/mart_brand_receipt_ranking.sql`.
 - **When considering average spend from receipts with 'rewardsReceiptStatus' of 'Accepted' or 'Rejected', which is greater?**
   - See the full query in `sql/mart/mart_brand_receipt_comparison.sql`.
 - **When considering total number of items purchased from receipts with 'rewardsReceiptStatus' of 'Accepted' or 'Rejected', which is greater?**
@@ -51,7 +51,7 @@ I attempted to answer all the business questions using SQL queries against our s
 ### Observations and Data Quality Issues while creating business models
 
 - **Limited Data in the BrandCode Field:**  
-  The join between receipt items and brands is based on the `brandCode` field. However, many receipt items lack a valid `brandCode`, so the analysis for the top 5 brands and their ranking (first two questions) has limited accuracy. I decided to toss out this query as only 2 business questions needed answered.
+  The join between receipt items and brands is based on the `brandCode` field. However, many receipt items lack a valid `brandCode`, so the analysis for the top 5 brands and their ranking (first two questions) has limited accuracy. And I had to make the timeframe 2021 because of limited historical data.
 
 - **Status Values Issue:**  
   In our receipts data, the `rewardsReceiptStatus` field does not contain the expected 'ACCEPTED' value; only 'REJECTED' and 'FINISHED' are present. Therefore, for status-based analyses, the query uses 'FINISHED' in place of 'ACCEPTED'. This is a data quality issue that affects the comparison of average spend and total items purchased.
